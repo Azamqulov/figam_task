@@ -31,7 +31,7 @@ const Component1: NextPage = () => {
       {/* Footer background — absolute */}
       <section className="w-full absolute top-[7602px] flex items-start isolate max-w-full">
         <Image
-          className="h-[1738px] max-[1590px]:h-[2138px] max-[1400px]:h-[2368px] max-[1200px]:h-[6068px] max-[1000px]:hidden w-full flex-1 relative max-w-full overflow-hidden object-cover m-auto"
+          className="h-[1688px] max-[1590px]:h-[2138px] max-[1400px]:h-[2368px] max-[1200px]:h-[6068px] max-[1000px]:hidden w-full flex-1 relative max-w-full overflow-hidden object-cover m-auto"
           width={1600}
           height={100}
           sizes="100vw"
