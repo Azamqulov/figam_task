@@ -122,11 +122,14 @@ module.exports = {
         "num-12": "1px solid #c3c3c3",
       },
       fontFamily: {
-  inter: ['"Inter"', "sans-serif"],
-  "libre-franklin": ['"Libre Franklin"', "sans-serif"],
-  sans: ['"Libre Franklin"', "sans-serif"],
-  inherit: "inherit",
-},
+        inter: ['"Inter"', "sans-serif"],
+
+        "libre-franklin": ['"Libre Franklin"', "sans-serif"],
+
+        sans: ['"Libre Franklin"', "sans-serif"],
+
+        inherit: ["inherit"],
+      },
       borderRadius: {
         "num-20": "20px",
         "num-6": "6px",
@@ -213,9 +216,12 @@ module.exports = {
       "num-52": "52px",
     },
     backgroundImage: {
-      "gradient-1": "linear-gradient(180deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.5) 52.08%, rgba(0, 0, 0, 0.3) 100%)",
-      "gradient-2": "linear-gradient(180deg, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0) 100%)",
-      "gradient-3": "linear-gradient(180deg, rgba(14, 14, 14, 0.8) 0%, rgba(14, 14, 14, 0.6) 100%)",
+      "gradient-1":
+        "linear-gradient(180deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.5) 52.08%, rgba(0, 0, 0, 0.3) 100%)",
+      "gradient-2":
+        "linear-gradient(180deg, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0) 100%)",
+      "gradient-3":
+        "linear-gradient(180deg, rgba(14, 14, 14, 0.8) 0%, rgba(14, 14, 14, 0.6) 100%)",
     },
     boxShadow: {
       "shadow-1": "0px 0px 20px rgba(0, 0, 0, 0.1)",

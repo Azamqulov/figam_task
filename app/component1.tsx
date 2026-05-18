@@ -20,7 +20,7 @@ const Component1: NextPage = () => {
   return (
     <div
       className="
-      w-[1520px] mx-auto relative overflow-hidden
+      w-[1520px] max-w-full mx-auto relative overflow-hidden
       flex flex-col items-start
       pt-[10px] px-[10px] pb-0
       box-border isolate gap-10
@@ -29,9 +29,9 @@ const Component1: NextPage = () => {
     "
     >
       {/* Footer background — absolute */}
-      <section className="w-full absolute top-[7602px] flex items-start isolate max-w-full">
+      <section className="w-full absolute top-[7630px] left-0 flex items-start isolate pointer-events-none px-[10px]">
         <Image
-          className="h-[1688px] max-[1590px]:h-[2138px] max-[1400px]:h-[2368px] max-[1200px]:h-[6068px] max-[1000px]:hidden w-full flex-1 relative max-w-full overflow-hidden object-cover m-auto"
+          className="h-[1687px] max-[1590px]:h-[2138px] max-[1400px]:h-[2368px] max-[1200px]:h-[6068px] max-[1000px]:hidden w-full flex-1 relative max-w-full overflow-hidden object-cover"
           width={1600}
           height={100}
           sizes="100vw"
@@ -39,9 +39,9 @@ const Component1: NextPage = () => {
           src="/Footer@2x.png"
         />
         <Image
-          className="h-1.5 w-full max-w-[1161px] max-[1400px]:hidden absolute bottom-[287px] left-1/2 -translate-x-1/2 z-[1] object-contain"
+          className="h-1.5 w-full max-w-[1110px] max-[1400px]:hidden absolute bottom-[287px] left-1/2 -translate-x-1/2 z-[1] object-contain"
           loading="lazy"
-          width={1161}
+          width={1110}
           height={6}
           sizes="100vw"
           alt=""
