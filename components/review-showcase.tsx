@@ -56,49 +56,79 @@ const ReviewShowcase: NextPage<ReviewShowcaseType> = ({
     "работает на постоянке",
   ],
 }) => {
-  const rectangleDivStyle: CSSProperties = useMemo(() => ({
-    height: rectangleDivHeight,
-  }), [rectangleDivHeight]);
+  const rectangleDivStyle: CSSProperties = useMemo(
+    () => ({
+      height: rectangleDivHeight,
+    }),
+    [rectangleDivHeight],
+  );
 
-  const evaluationSummaryStyle: CSSProperties = useMemo(() => ({
-    gap: evaluationSummaryGap,
-  }), [evaluationSummaryGap]);
+  const evaluationSummaryStyle: CSSProperties = useMemo(
+    () => ({
+      gap: evaluationSummaryGap,
+    }),
+    [evaluationSummaryGap],
+  );
 
-  const scenarioListingStyle: CSSProperties = useMemo(() => ({
-    width: scenarioListingWidth,
-  }), [scenarioListingWidth]);
+  const scenarioListingStyle: CSSProperties = useMemo(
+    () => ({
+      width: scenarioListingWidth,
+    }),
+    [scenarioListingWidth],
+  );
 
-  const velvetSeasonStyle: CSSProperties = useMemo(() => ({
-    width: velvetSeasonWidth,
-    display: velvetSeasonDisplay,
-    alignSelf: velvetSeasonAlignSelf,
-  }), [velvetSeasonWidth, velvetSeasonDisplay, velvetSeasonAlignSelf]);
+  const velvetSeasonStyle: CSSProperties = useMemo(
+    () => ({
+      width: velvetSeasonWidth,
+      display: velvetSeasonDisplay,
+      alignSelf: velvetSeasonAlignSelf,
+    }),
+    [velvetSeasonWidth, velvetSeasonDisplay, velvetSeasonAlignSelf],
+  );
 
-  const div3Style: CSSProperties = useMemo(() => ({
-    width: divWidth,
-  }), [divWidth]);
+  const div3Style: CSSProperties = useMemo(
+    () => ({
+      width: divWidth,
+    }),
+    [divWidth],
+  );
 
-  const accomplishmentsRecordStyle: CSSProperties = useMemo(() => ({
-    gap: accomplishmentsRecordGap,
-  }), [accomplishmentsRecordGap]);
+  const accomplishmentsRecordStyle: CSSProperties = useMemo(
+    () => ({
+      gap: accomplishmentsRecordGap,
+    }),
+    [accomplishmentsRecordGap],
+  );
 
-  const div4Style: CSSProperties = useMemo(() => ({
-    width: divWidth1,
-    display: divDisplay,
-  }), [divWidth1, divDisplay]);
+  const div4Style: CSSProperties = useMemo(
+    () => ({
+      width: divWidth1,
+      display: divDisplay,
+    }),
+    [divWidth1, divDisplay],
+  );
 
-  const achievementDeliveryStyle: CSSProperties = useMemo(() => ({
-    padding: achievementDeliveryPadding,
-    backgroundImage: achievementDeliveryBackgroundImage,
-  }), [achievementDeliveryPadding, achievementDeliveryBackgroundImage]);
+  const achievementDeliveryStyle: CSSProperties = useMemo(
+    () => ({
+      padding: achievementDeliveryPadding,
+      backgroundImage: achievementDeliveryBackgroundImage,
+    }),
+    [achievementDeliveryPadding, achievementDeliveryBackgroundImage],
+  );
 
-  const imageIconStyle: CSSProperties = useMemo(() => ({
-    height: baCdfbbfceaIconHeight,
-  }), [baCdfbbfceaIconHeight]);
+  const imageIconStyle: CSSProperties = useMemo(
+    () => ({
+      height: baCdfbbfceaIconHeight,
+    }),
+    [baCdfbbfceaIconHeight],
+  );
 
-  const gatheringTeamStyle: CSSProperties = useMemo(() => ({
-    padding: gatheringTeamPadding,
-  }), [gatheringTeamPadding]);
+  const gatheringTeamStyle: CSSProperties = useMemo(
+    () => ({
+      padding: gatheringTeamPadding,
+    }),
+    [gatheringTeamPadding],
+  );
 
   return (
     <div
@@ -117,6 +147,17 @@ const ReviewShowcase: NextPage<ReviewShowcaseType> = ({
         box-border gap-5
         max-[480px]:gap-4
         z-[3]
+         w-full min-w-0 overflow-hidden
+                
+              
+                max-[1225px]:flex-wrap
+                p-10
+                max-[850px]:py-[26px]
+                
+                gap-[59px]
+                max-[1225px]:gap-5
+                max-[480px]:gap-4
+                z-[3]
         ${className}
       `}
     >
@@ -129,7 +170,7 @@ const ReviewShowcase: NextPage<ReviewShowcaseType> = ({
       {/* Left: info */}
       <section
         className="
-           min-w-0
+          min-w-0
                   min-[1226px]:w-[461px] min-[1226px]:shrink-0
                   max-[1225px]:w-full
                   flex flex-col items-start gap-[30px]
@@ -143,11 +184,13 @@ const ReviewShowcase: NextPage<ReviewShowcaseType> = ({
           className="w-full min-w-0 flex flex-col items-start gap-2.5"
           style={scenarioListingStyle}
         >
-          <div className="
+          <div
+            className="
             rounded-full bg-pink-brand
             inline-flex items-center justify-center
             h-[27px] px-[9px]
-          ">
+          "
+          >
             <b className="leading-[140%] uppercase text-[10px]">{prop}</b>
           </div>
 
@@ -170,15 +213,16 @@ const ReviewShowcase: NextPage<ReviewShowcaseType> = ({
 
         {/* Info cards */}
         <div className="w-full min-w-0 flex flex-col items-start gap-4 text-left text-[14px] text-pink-brand">
-
           {/* Problem */}
-          <div className="
+          <div
+            className="
             w-full min-w-0 overflow-hidden
             rounded-[16px] bg-lavenderblush-200
             border-crimson-100 border-solid border-[1px]
             flex flex-col items-start
             p-[15px] gap-[5px]
-          ">
+          "
+          >
             <div className="flex items-center gap-2">
               <Image
                 className="h-4 w-4 rounded-full shrink-0"
@@ -192,13 +236,15 @@ const ReviewShowcase: NextPage<ReviewShowcaseType> = ({
                 Проблема
               </b>
             </div>
-            <div className="
+            <div
+              className="
               w-full min-w-0 break-words
               text-[18px] leading-[140%] font-semibold text-black-brand
               max-[480px]:text-[15px]
               max-[360px]:text-[13px]
               max-[320px]:text-[12px]
-            ">
+            "
+            >
               {prop1}
             </div>
           </div>
@@ -273,20 +319,26 @@ const ReviewShowcase: NextPage<ReviewShowcaseType> = ({
             >
               {bulletPoints.map((point, i) => (
                 <li key={i} className="flex items-start gap-2">
-                  <span className="
+                  <span
+                    className="
                     shrink-0 text-pink-brand leading-[140%]
                     text-[18px]
                     max-[480px]:text-[15px]
                     max-[360px]:text-[13px]
                     max-[320px]:text-[12px]
-                  ">•</span>
-                  <span className="
+                  "
+                  >
+                    •
+                  </span>
+                  <span
+                    className="
                     min-w-0 break-words
                     text-[18px] tracking-[-0.01em] leading-[140%] font-semibold text-gray-300
                     max-[480px]:text-[15px]
                     max-[360px]:text-[13px]
                     max-[320px]:text-[12px]
-                  ">
+                  "
+                  >
                     {point}
                   </span>
                 </li>
@@ -300,6 +352,7 @@ const ReviewShowcase: NextPage<ReviewShowcaseType> = ({
       <section
         className="
          flex-1 min-w-0
+         p-x-10
                   max-[1225px]:w-full max-[1225px]:min-w-full
                   rounded-[20px] max-[480px]:rounded-[12px]
                   flex items-start justify-between flex-wrap

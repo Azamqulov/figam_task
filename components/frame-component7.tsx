@@ -1,26 +1,63 @@
+"use client";
+
 import type { NextPage } from "next";
 import Image from "next/image";
+import { useState } from "react";
 
 export type FrameComponent7Type = {
   className?: string;
 };
 
 const faqItems = [
-  "Наружная реклама это дорого?",
-  "Долго?",
-  "Был плохой опыт?",
-  "А если что-то сломается?",
-  "Сделаете плохо?",
+  {
+    question: "Наружная реклама это дорого?",
+    answer:
+      "Нет — стоимость зависит от формата и материалов. Мы подбираем решения под разные бюджеты и всегда честно говорим, что реально сделать за ваши деньги.",
+  },
+  {
+    question: "Долго?",
+    answer:
+      "Средний срок производства — от 3 до 7 рабочих дней. Сложные объекты могут занять чуть больше, но мы всегда согласовываем сроки заранее.",
+  },
+  {
+    question: "Был плохой опыт?",
+    answer:
+      "Понимаем. Именно поэтому мы работаем прозрачно: фиксируем всё в договоре, показываем макет до производства и держим вас в курсе на каждом этапе.",
+  },
+  {
+    question: "А если что-то сломается?",
+    answer:
+      "Даём гарантию на все изделия. Если что-то вышло из строя по нашей вине — приедем и исправим за свой счёт.",
+  },
+  {
+    question: "Сделаете плохо?",
+    answer:
+      "Мы показываем портфолио реальных работ, а не рендеры. Вы видите качество до того, как принять решение.",
+  },
+];
+
+const galleryImages = [
+  { src: "/gallery/sign-1.jpg", alt: "Световая вывеска для кофейни" },
+  { src: "/gallery/sign-2.jpg", alt: "Объёмные буквы для офиса" },
+  { src: "/gallery/sign-3.jpg", alt: "Баннер для торгового центра" },
+  { src: "/gallery/sign-4.jpg", alt: "Наружная реклама ресторана" },
+  { src: "/gallery/sign-5.jpg", alt: "Вывеска для салона красоты" },
+  { src: "/gallery/sign-6.jpg", alt: "Лайтбокс для аптеки" },
+  { src: "/gallery/sign-7.jpg", alt: "Табличка для бизнес-центра" },
+  { src: "/gallery/sign-8.jpg", alt: "Рекламный щит для магазина" },
 ];
 
 const FrameComponent7: NextPage<FrameComponent7Type> = ({ className = "" }) => {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  const toggle = (i: number) => setOpenIndex(openIndex === i ? null : i);
+
   return (
     <section
       className={`
         self-stretch w-full min-w-0 overflow-hidden
         flex items-start
-        pt-0
-        px-10 pb-10
+        pt-0 px-10 pb-10
         max-[850px]:px-6 max-[850px]:pb-8
         max-[480px]:px-4 max-[480px]:pb-6
         max-[360px]:px-3 max-[360px]:pb-5
@@ -54,8 +91,7 @@ const FrameComponent7: NextPage<FrameComponent7Type> = ({ className = "" }) => {
                 cursor-pointer
                 border-gray-2300 border-solid border-[1px]
                 py-[5px] pl-[9px] pr-[13px]
-                bg-transparent
-                rounded-md
+                bg-transparent rounded-md
                 inline-flex items-center justify-center flex-wrap
                 gap-x-1 gap-y-[5px] z-[2]
               ">
@@ -89,7 +125,7 @@ const FrameComponent7: NextPage<FrameComponent7Type> = ({ className = "" }) => {
             </div>
           </div>
 
-          {/* Right: FAQ list */}
+          {/* Right: FAQ accordion */}
           <div className="
             min-w-0
             min-[1101px]:w-[755px] min-[1101px]:ml-[-321px]
@@ -97,38 +133,78 @@ const FrameComponent7: NextPage<FrameComponent7Type> = ({ className = "" }) => {
             flex flex-col items-start gap-0.5
             relative text-[22px] text-black-brand
           ">
-            {faqItems.map((item, i) => (
-              <div
-                key={i}
-                className="
-                  w-full min-w-0 overflow-hidden
-                  rounded-[10px] bg-white
-                  flex items-center justify-between
-                  py-[20px] pl-[20px] pr-[25px]
-                  gap-5
-                  z-[1]
-                "
-              >
-                <h3 className="
-                  m-0 min-w-0 break-words flex-1
-                  text-[length:inherit] tracking-[-0.01em] leading-[140%] font-semibold font-inherit
-                  max-[480px]:text-[18px] max-[480px]:leading-[25px]
-                  max-[360px]:text-[16px]
-                  max-[320px]:text-[14px]
-                ">
-                  {item}
-                </h3>
-                <Image
-                  className="h-[38px] w-[38px] relative shrink-0"
-                  loading="lazy"
-                  width={38}
-                  height={38}
-                  sizes="38px"
-                  alt=""
-                  src="/Group-137.svg"
-                />
-              </div>
-            ))}
+            {faqItems.map((item, i) => {
+              const isOpen = openIndex === i;
+              return (
+                <div
+                  key={i}
+                  className="
+                    w-full min-w-0 overflow-hidden
+                    rounded-[10px] bg-white
+                    flex flex-col
+                    z-[1]
+                    transition-all duration-300
+                  "
+                >
+                  {/* Question row — clickable */}
+                  <button
+                    onClick={() => toggle(i)}
+                    className="
+                      w-full min-w-0
+                      flex items-center justify-between
+                      py-[20px] pl-[20px] pr-[25px]
+                      gap-5
+                      bg-transparent border-none cursor-pointer text-left
+                    "
+                    aria-expanded={isOpen}
+                  >
+                    <h3 className="
+                      m-0 min-w-0 break-words flex-1
+                      text-[length:inherit] tracking-[-0.01em] leading-[140%] font-semibold font-inherit text-black-brand
+                      max-[480px]:text-[18px] max-[480px]:leading-[25px]
+                      max-[360px]:text-[16px]
+                      max-[320px]:text-[14px]
+                    ">
+                      {item.question}
+                    </h3>
+
+                    {/* Animated icon: rotates when open */}
+                    <div
+                      className="shrink-0 transition-transform duration-300"
+                      style={{ transform: isOpen ? "rotate(45deg)" : "rotate(0deg)" }}
+                    >
+                      <Image
+                        className="h-[38px] w-[38px] relative"
+                        loading="lazy"
+                        width={38}
+                        height={38}
+                        sizes="38px"
+                        alt={isOpen ? "Закрыть ответ" : "Открыть ответ"}
+                        src="/Group-137.svg"
+                      />
+                    </div>
+                  </button>
+
+                  {/* Answer — collapsible */}
+                  <div
+                    className="overflow-hidden transition-all duration-300 ease-in-out"
+                    style={{
+                      maxHeight: isOpen ? "300px" : "0px",
+                      opacity: isOpen ? 1 : 0,
+                    }}
+                  >
+                    <p className="
+                      m-0 px-[20px] pb-[20px]
+                      text-[16px] leading-[155%] font-medium text-gray-2400
+                      max-[480px]:text-[15px]
+                      max-[360px]:text-[13px]
+                    ">
+                      {item.answer}
+                    </p>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </section>
 
@@ -168,7 +244,7 @@ const FrameComponent7: NextPage<FrameComponent7Type> = ({ className = "" }) => {
           </div>
         </div>
 
-        {/* Gallery grid */}
+        {/* Gallery grid — next/image */}
         <div className="
           self-stretch w-full min-w-0
           grid
@@ -180,21 +256,32 @@ const FrameComponent7: NextPage<FrameComponent7Type> = ({ className = "" }) => {
           max-[480px]:gap-4
           max-[360px]:gap-3
         ">
-          {Array.from({ length: 8 }).map((_, i) => (
+          {galleryImages.map((img, i) => (
             <div
               key={i}
               className="
-                w-full min-w-0
+                relative w-full min-w-0
                 h-[402px]
                 max-[850px]:h-[300px]
                 max-[480px]:h-[240px]
                 max-[360px]:h-[200px]
                 rounded-[20px] max-[480px]:rounded-[12px]
                 bg-gainsboro-700
+                overflow-hidden
               "
-            />
+            >
+              <Image
+                src={img.src}
+                alt={img.alt}
+                fill
+                sizes="(max-width: 480px) 100vw, (max-width: 850px) 50vw, (max-width: 1200px) 33vw, 25vw"
+                className="object-cover"
+                loading="lazy"
+              />
+            </div>
           ))}
         </div>
+
       </div>
     </section>
   );

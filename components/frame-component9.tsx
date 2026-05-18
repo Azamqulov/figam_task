@@ -1,3 +1,5 @@
+"use client";
+
 import type { NextPage } from "next";
 import Image from "next/image";
 
@@ -6,6 +8,10 @@ export type FrameComponent9Type = {
 };
 
 const FrameComponent9: NextPage<FrameComponent9Type> = ({ className = "" }) => {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <section
       className={`
@@ -48,7 +54,7 @@ const FrameComponent9: NextPage<FrameComponent9Type> = ({ className = "" }) => {
             width={138}
             height={122}
             sizes="138px"
-            alt=""
+            alt="Логотип компании Замечательно — вывески под ключ"
             src="/1.svg"
           />
           <div className="
@@ -86,7 +92,7 @@ const FrameComponent9: NextPage<FrameComponent9Type> = ({ className = "" }) => {
           </div>
 
           {/* Contacts */}
-          <div className="min-w-0  flex flex-col items-start gap-[25px] max-[480px]:gap-4">
+          <div className="min-w-0 flex flex-col items-start gap-[25px] max-[480px]:gap-4">
             <b className="relative leading-[140%] uppercase z-[1] max-[360px]:text-[11px]">
               Контакты
             </b>
@@ -128,9 +134,33 @@ const FrameComponent9: NextPage<FrameComponent9Type> = ({ className = "" }) => {
             </button>
 
             <div className="flex items-start gap-[4.9px]">
-              <Image className="w-[29.2px] relative max-h-full z-[1]" loading="lazy" width={29.2} height={30} sizes="30px" alt="" src="/08-Whatsapp.svg" />
-              <Image className="w-[29.2px] relative max-h-full z-[1]" loading="lazy" width={29.2} height={29.2} sizes="30px" alt="" src="/AAAABcgUSsgRaClLOLoapgEBpJXzzETtQjUnOgLWCuh.svg" />
-              <Image className="w-[29.2px] relative max-h-full z-[1]" loading="lazy" width={29.2} height={30} sizes="30px" alt="" src="/Group.svg" />
+              <Image
+                className="w-[29.2px] relative max-h-full z-[1]"
+                loading="lazy"
+                width={29.2}
+                height={30}
+                sizes="30px"
+                alt="Написать нам в WhatsApp"
+                src="/08-Whatsapp.svg"
+              />
+              <Image
+                className="w-[29.2px] relative max-h-full z-[1]"
+                loading="lazy"
+                width={29.2}
+                height={29.2}
+                sizes="30px"
+                alt="Написать нам в Telegram"
+                src="/AAAABcgUSsgRaClLOLoapgEBpJXzzETtQjUnOgLWCuh.svg"
+              />
+              <Image
+                className="w-[29.2px] relative max-h-full z-[1]"
+                loading="lazy"
+                width={29.2}
+                height={30}
+                sizes="30px"
+                alt="Наша группа ВКонтакте"
+                src="/Group.svg"
+              />
             </div>
           </div>
         </div>
@@ -185,12 +215,18 @@ const FrameComponent9: NextPage<FrameComponent9Type> = ({ className = "" }) => {
           </div>
 
           {/* Back to top */}
-          <div className="
-            flex items-center justify-end gap-2.5 z-[1]
-            shrink-0 text-gray-1600
-            max-[480px]:self-end
-          ">
-            <div className="relative leading-[140%] font-semibold max-[360px]:text-[12px]">
+          <button
+            onClick={scrollToTop}
+            className="
+              flex items-center justify-end gap-2.5 z-[1]
+              shrink-0 text-gray-1600
+              max-[480px]:self-end
+              bg-transparent border-none cursor-pointer
+              hover:opacity-80 transition-opacity duration-200
+            "
+            aria-label="Вернуться в начало страницы"
+          >
+            <div className="relative leading-[140%] font-semibold max-[360px]:text-[12px] text-gray-1600">
               НАВЕРХ
             </div>
             <div className="h-[30px] w-[30px] relative rounded-[4px] bg-gray-1400 flex items-center justify-center shrink-0">
@@ -199,11 +235,11 @@ const FrameComponent9: NextPage<FrameComponent9Type> = ({ className = "" }) => {
                 width={10}
                 height={12.5}
                 sizes="10px"
-                alt=""
+                alt="Стрелка вверх — вернуться в начало страницы"
                 src="/Arrow-1.svg"
               />
             </div>
-          </div>
+          </button>
         </footer>
       </div>
     </section>

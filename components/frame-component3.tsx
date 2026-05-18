@@ -89,54 +89,163 @@ const FrameComponent3: NextPage<FrameComponent3Type> = ({ className = "" }) => {
           />
         </div>
       </div>
-      <div className="flex-1 rounded-num-20 bg-pink-brand overflow-hidden flex items-center justify-between py-[50px] px-num-40 box-border relative isolate gap-[15px] min-w-[507px] max-w-full mq450:gap-[15px] mq850:px-num-20 mq850:pt-num-32 mq850:pb-num-32 mq850:box-border mq850:min-w-full">
+      {/* Slider block — pink background */}
+      <div
+        className="
+    flex-1 rounded-num-20 bg-pink-brand overflow-hidden
+    flex items-center justify-between
+    py-[50px] px-num-40
+    box-border relative isolate gap-[15px]
+    min-w-[507px] max-w-full
+
+    mq850:px-num-20 mq850:pt-num-32 mq850:pb-num-32 mq850:box-border mq850:min-w-full
+
+    max-[500px]:flex-col
+    max-[500px]:items-stretch
+    max-[500px]:px-4
+    max-[500px]:py-8
+    max-[500px]:gap-5
+    max-[500px]:min-w-0
+
+    max-[360px]:px-3
+    max-[360px]:py-6
+  "
+      >
+        {/* Скрытый placeholder-блок */}
         <div className="h-[740px] w-[780px] relative rounded-num-20 bg-pink-brand hidden max-w-full z-[0] shrink-0" />
+
+        {/* Фоновое изображение */}
         <Image
-          className="h-full w-full absolute !!m-[0 important] inset-0 max-w-full overflow-hidden max-h-full object-cover z-[1] shrink-0"
+          className="h-full w-full absolute inset-0 max-w-full overflow-hidden max-h-full object-cover z-[1] shrink-0"
           width={780}
           height={740}
           sizes="100vw"
-          alt=""
+          alt="Фоновое изображение слайдера с примерами вывесок"
           src="/Mask-group1@2x.png"
         />
-        <button className="cursor-pointer bg-transparent border-none p-0 flex items-center justify-center shrink-0 z-[2] transition-transform hover:scale-110">
+
+        {/* Стрелка влево */}
+        <button
+          className="
+      cursor-pointer bg-transparent border-none p-0
+      flex items-center justify-center shrink-0 z-[2]
+      transition-transform hover:scale-110
+      max-[500px]:hidden
+    "
+          aria-label="Предыдущий слайд"
+        >
           <Image
             className="w-11 h-11 relative object-contain"
             loading="lazy"
             width={44}
             height={44}
-            sizes="100vw"
-            alt=""
+            sizes="44px"
+            alt="Стрелка назад — предыдущий пример работы"
             src="/Group-29@2x.png"
           />
         </button>
-        <section className="flex-1 max-w-[525px] rounded-[13.9px] bg-white flex flex-col items-center p-num-20 pb-[35px] box-border gap-7 z-[2] shrink-0 text-center text-num-18 text-gray-2100 font-libre-franklin mq850:pb-num-23 mq850:box-border shadow-lg">
+
+        {/* Карточка кейса */}
+        <section
+          className="
+      flex-1 max-w-[525px] rounded-[13.9px] bg-white
+      flex flex-col items-center
+      p-num-20 pb-[35px]
+      box-border gap-7 z-[2] shrink-0
+      text-center text-num-18 text-gray-2100 font-libre-franklin
+      shadow-lg
+
+      mq850:pb-num-23 mq850:box-border
+
+      max-[500px]:max-w-full
+      max-[500px]:w-full
+      max-[500px]:p-3
+      max-[500px]:pb-5
+      max-[500px]:gap-4
+    "
+        >
           <Image
-            className="w-full h-[532px] mq450:h-[300px] mq850:h-[400px] relative rounded-[11.6px] overflow-hidden shrink-0 object-cover z-[3]"
+            className="
+        w-full relative rounded-[11.6px] overflow-hidden shrink-0 object-cover z-[3]
+        h-[532px]
+        mq850:h-[400px]
+        mq450:h-[300px]
+        max-[500px]:h-[240px]
+        max-[360px]:h-[200px]
+      "
             loading="lazy"
             width={485}
             height={532}
-            sizes="100vw"
-            alt=""
+            sizes="(max-width: 500px) 100vw, (max-width: 850px) 50vw, 485px"
+            alt="Пример вывески для сети кофеен Этлон кофе"
             src="/IMG-8434-8@2x.png"
           />
           <div className="self-stretch flex items-center justify-center box-border max-w-full shrink-0">
-            <div className="flex-1 relative leading-[140%] font-medium inline-block max-w-full z-[3]">
+            <div className="flex-1 relative leading-[140%] font-medium inline-block max-w-full z-[3] max-[500px]:text-[15px]">
               Сеть кофеен «Этлон кофе»
             </div>
           </div>
         </section>
-        <button className="cursor-pointer bg-transparent border-none p-0 flex items-center justify-center shrink-0 z-[2] transition-transform hover:scale-110">
+
+        {/* Стрелка вправо */}
+        <button
+          className="
+      cursor-pointer bg-transparent border-none p-0
+      flex items-center justify-center shrink-0 z-[2]
+      transition-transform hover:scale-110
+      max-[500px]:hidden
+    "
+          aria-label="Следующий слайд"
+        >
           <Image
             className="w-11 h-11 relative"
             loading="lazy"
             width={44}
             height={44}
-            sizes="100vw"
-            alt=""
+            sizes="44px"
+            alt="Стрелка вперёд — следующий пример работы"
             src="/Group-282.svg"
           />
         </button>
+
+        {/* Стрелки для мобайла — под карточкой, в ряд */}
+        <div
+          className="
+      hidden
+      max-[500px]:flex
+      items-center justify-center gap-6
+      z-[2] w-full
+    "
+        >
+          <button
+            className="cursor-pointer bg-transparent border-none p-0 flex items-center justify-center transition-transform hover:scale-110"
+            aria-label="Предыдущий слайд"
+          >
+            <Image
+              className="w-11 h-11 relative object-contain"
+              loading="lazy"
+              width={44}
+              height={44}
+              sizes="44px"
+              alt="Стрелка назад — предыдущий пример работы"
+              src="/Group-29@2x.png"
+            />
+          </button>
+          <button
+            className="cursor-pointer bg-transparent border-none p-0 flex items-center justify-center transition-transform hover:scale-110"
+            aria-label="Следующий слайд"
+          >
+            <Image
+              className="w-11 h-11 relative"
+              loading="lazy"
+              width={44}
+              height={44}
+              sizes="44px"
+              alt="Стрелка вперёд — следующий пример работы"
+              src="/Group-282.svg"
+            />
+          </button>
+        </div>
       </div>
     </div>
   );

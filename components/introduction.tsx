@@ -21,8 +21,21 @@ const cardsData: CardData[] = [
     subtitle: "если нужна «серьезная» вывеска для улицы",
     imgSlot: (
       <div className="w-full h-[300px] max-[480px]:h-[220px] max-[360px]:h-[180px] relative rounded-[20px] overflow-hidden flex items-center justify-center shrink-0 bg-[url('/IMG-4385-1@2x.png')] bg-cover bg-center">
-        <Image className="absolute inset-0 w-full h-full object-cover z-[1]" width={433} height={300} sizes="100vw" alt="" src="/IMG-8434-11@2x.png" />
-        <Image className="relative max-w-[92%] max-h-[36px] w-[392px] object-contain z-[3]" width={392} height={36} alt="" src="/Group-164.svg" />
+        <Image
+          className="absolute inset-0 w-full h-full object-cover z-[1]"
+          width={433}
+          height={300}
+          sizes="100vw"
+          alt="Пример объёмных букв на фасаде здания"
+          src="/IMG-8434-11@2x.png"
+        />
+        <Image
+          className="relative max-w-[92%] max-h-[36px] w-[392px] object-contain z-[3]"
+          width={392}
+          height={36}
+          alt="Логотип на вывеске с объёмными буквами"
+          src="/Group-164.svg"
+        />
       </div>
     ),
     features: ["видно издалека", "подходит для сетей", "выглядит дороже"],
@@ -33,7 +46,14 @@ const cardsData: CardData[] = [
     subtitle: "если нужен максимум за разумные деньги",
     imgSlot: (
       <div className="w-full h-[300px] max-[480px]:h-[220px] max-[360px]:h-[180px] relative rounded-[20px] overflow-hidden flex items-center justify-center shrink-0 bg-[url('/6b23a730-cdf2-44bb-92fc-8e0a4947d30c-1@2x.png')] bg-cover bg-center">
-        <Image className="relative max-w-[92%] max-h-[36px] w-[392px] object-contain z-[3]" loading="lazy" width={392} height={36} alt="" src="/Group-164.svg" />
+        <Image
+          className="relative max-w-[92%] max-h-[36px] w-[392px] object-contain z-[3]"
+          loading="lazy"
+          width={392}
+          height={36}
+          alt="Логотип на световом коробе"
+          src="/Group-164.svg"
+        />
       </div>
     ),
     features: [
@@ -48,7 +68,14 @@ const cardsData: CardData[] = [
     subtitle: "если важен стиль и атмосфера",
     imgSlot: (
       <div className="w-full h-[300px] max-[480px]:h-[220px] max-[360px]:h-[180px] relative rounded-[20px] overflow-hidden flex items-center justify-center shrink-0 bg-[url('/image-110@2x.png')] bg-cover bg-center">
-        <Image className="relative max-w-[92%] max-h-[36px] w-[392px] object-contain z-[3]" loading="lazy" width={392} height={36} alt="" src="/Group-164.svg" />
+        <Image
+          className="relative max-w-[92%] max-h-[36px] w-[392px] object-contain z-[3]"
+          loading="lazy"
+          width={392}
+          height={36}
+          alt="Логотип на неоновой вывеске"
+          src="/Group-164.svg"
+        />
       </div>
     ),
     features: [
@@ -96,7 +123,11 @@ const IntroCard = ({ title, subtitle, imgSlot, features }: CardData) => {
             <div key={idx} className="flex items-start gap-2.5 w-full text-[16px] text-gray-2100">
               <Image
                 className="w-3.5 h-3.5 rounded-full z-[2] shrink-0 mt-[5px] bg-pink-brand p-[2px]"
-                width={14} height={14} sizes="14px" alt="" src="/Travelers.svg"
+                width={14}
+                height={14}
+                sizes="14px"
+                alt="Галочка преимущества"
+                src="/Travelers.svg"
               />
               <div className="flex-1 min-w-0 break-words relative leading-[160%] font-medium z-[2] max-[360px]:text-[14px] max-[320px]:text-[13px]">
                 {feat}
@@ -251,7 +282,7 @@ const Introduction: NextPage<IntroductionType> = ({ className = "" }) => {
                 width={274}
                 height={189}
                 sizes="274px"
-                alt=""
+                alt="Иллюстрация — специалист помогает выбрать вывеску"
                 src="/Mask-group2.svg"
               />
 
@@ -289,7 +320,11 @@ const Introduction: NextPage<IntroductionType> = ({ className = "" }) => {
                   </b>
                   <Image
                     className="h-[19px] w-[19px] p-[2px] relative bg-pink-brand border-[1px] rounded-full shrink-0"
-                    width={19} height={19} sizes="19px" alt="" src="/Vector.svg"
+                    width={19}
+                    height={19}
+                    sizes="19px"
+                    alt="Стрелка — перейти к рекомендации"
+                    src="/Vector.svg"
                   />
                 </button>
               </div>

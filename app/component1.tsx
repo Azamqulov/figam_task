@@ -29,7 +29,7 @@ const Component1: NextPage = () => {
     "
     >
       {/* Footer background — absolute */}
-      <section className="w-full absolute top-[7722px] left-0 flex items-start isolate max-w-full">
+      <section className="w-full absolute top-[7672px] left-0 flex items-start isolate max-w-full">
         <Image
           className="h-[1738px] max-[1600px]:h-[2138px] max-[1400px]:h-[2368px] max-[1200px]:h-[6068px] max-[1000px]:hidden w-full flex-1 relative max-w-full overflow-hidden object-cover m-auto"
           width={1600}

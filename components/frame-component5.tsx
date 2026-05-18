@@ -6,7 +6,6 @@ export type FrameComponent5Type = {
   className?: string;
 };
 
-// Reusable ProblemCard Component
 type ProblemCardProps = {
   number: string;
   text: string;
@@ -20,12 +19,30 @@ const ProblemCard: React.FC<ProblemCardProps> = ({
 }) => {
   return (
     <div
-      className={`rounded-num-20 w-[326px] bg-white flex items-center p-5 gap-4 shadow-sm z-[3] mq450:flex-wrap ${className}`}
+      className={`rounded-num-20 w-full max-w-[326px] bg-white flex items-center p-5 gap-4 shadow-sm z-[3]
+        max-[500px]:flex-col max-[500px]:items-start max-[500px]:max-w-full
+        mq450:flex-wrap
+        ${className}`}
     >
-      <h2 className="m-0 relative text-[80px] tracking-num--0_08 leading-[100%] font-medium font-inherit text-gray-900 shrink-0 mq450:text-[32px]   ">
+      <h2
+        className="
+          m-0 relative tracking-num--0_08 leading-[100%] font-medium font-inherit text-gray-900 shrink-0
+          text-[80px]
+          max-[850px]:text-[56px]
+          max-[500px]:text-[40px]
+          max-[360px]:text-[32px]
+        "
+      >
         {number}
       </h2>
-      <div className="flex-1 relative text-[18px] leading-[130%] font-medium text-gray-2000 inline-block min-w-[200px] shrink-0 mq450:min-w-full">
+      <div
+        className="
+          flex-1 relative leading-[130%] font-medium text-gray-2000 inline-block shrink-0
+          text-[18px] min-w-[200px]
+          max-[500px]:text-[15px] max-[500px]:min-w-0 max-[500px]:w-full
+          max-[360px]:text-[14px]
+        "
+      >
         {text}
       </div>
     </div>
@@ -35,20 +52,32 @@ const ProblemCard: React.FC<ProblemCardProps> = ({
 const FrameComponent5: NextPage<FrameComponent5Type> = ({ className = "" }) => {
   return (
     <section
-      className={`self-stretch flex items-start py-num-0 px-num-40 box-border max-w-full text-left text-num-80 text-gainsboro-200 font-libre-franklin ${className}`}
+      className={`self-stretch flex items-start py-num-0 px-num-40 box-border max-w-full text-left text-num-80 text-gainsboro-200 font-libre-franklin
+        max-[500px]:px-3
+        ${className}`}
     >
-      <div className="flex-1 rounded-num-30 bg-gainsboro-400 flex flex-col items-center pt-[79px] px-[246px] pb-num-78 box-border relative isolate max-w-full mq450:px-5 mq450:py-10 mq850:py-[51px] mq850:px-10 max-[1330px]:px-[40px] max-[1330px]:items-stretch">
+      <div
+        className="
+          flex-1 rounded-num-30 bg-gainsboro-400 flex flex-col items-center
+          pt-[79px] px-[246px] pb-num-78
+          box-border relative isolate max-w-full
+          max-[1330px]:px-[40px] max-[1330px]:items-stretch
+          max-[850px]:py-[51px] max-[850px]:px-10
+          max-[500px]:px-4 max-[500px]:py-8 max-[500px]:rounded-[16px]
+          max-[360px]:px-3 max-[360px]:py-6
+        "
+      >
         <div className="w-num-1520 h-[721px] relative rounded-num-30 bg-gainsboro-400 hidden max-w-full z-[0] shrink-0" />
 
         {/* --- DESKTOP LAYOUT (> 1330px) --- */}
         <div className="hidden min-[1331px]:flex w-full flex-col items-stretch pt-num-1 px-num-9 pb-num-2 box-border relative isolate gap-[60px] max-w-full shrink-0">
           <Image
-            className="w-full h-full absolute !!m-[0 important] top-[0px] right-[0px] bottom-[0px] left-[0px] max-w-full overflow-hidden max-h-full z-[2] shrink-0"
+            className="w-full h-full absolute top-[0px] right-[0px] bottom-[0px] left-[0px] max-w-full overflow-hidden max-h-full z-[2] shrink-0"
             loading="lazy"
             width={1028}
             height={564}
             sizes="100vw"
-            alt=""
+            alt="Декоративная схема расположения карточек с проблемами клиентов"
             src="/Group-95.svg"
           />
 
@@ -96,44 +125,53 @@ const FrameComponent5: NextPage<FrameComponent5Type> = ({ className = "" }) => {
         />
 
         {/* --- MOBILE RESPONSIVE LAYOUT (<= 1330px) --- */}
-        <div className="flex min-[1331px]:hidden w-full flex-col items-start gap-[40px] max-w-full z-[3]">
+        <div className="flex min-[1331px]:hidden w-full flex-col items-start gap-[40px] max-w-full z-[3] max-[500px]:gap-6">
           <div className="w-full flex justify-center z-[3]">
             <FrameComponent
               prop="Проблемы клиентов"
-              className="justify-center "
+              className="justify-center"
             />
           </div>
 
-          <div className="w-full grid grid-cols-2 gap-[25px] max-[800px]:grid-cols-1">
+          <div
+            className="
+              w-full grid gap-[25px]
+              grid-cols-2
+              max-[800px]:grid-cols-2
+              max-[500px]:grid-cols-1
+              max-[500px]:gap-4
+              max-[360px]:gap-3
+            "
+          >
             <ProblemCard
               number="01"
               text="Никто не объясняет, что можно согласовать, а что нет"
-              className="w-full"
+              className="w-full max-w-full"
             />
             <ProblemCard
               number="02"
               text="Цена сначала одна — потом допы вылезают"
-              className="w-full"
+              className="w-full max-w-full"
             />
             <ProblemCard
               number="03"
               text="Монтажники приехали и начался цирк на объекте"
-              className="w-full"
+              className="w-full max-w-full"
             />
             <ProblemCard
               number="04"
               text="Сделали не по макету — теперь переделка за мой счет"
-              className="w-full"
+              className="w-full max-w-full"
             />
             <ProblemCard
               number="05"
               text="Подрядчик пропал / не отвечает / тянет сроки"
-              className="w-full"
+              className="w-full max-w-full"
             />
             <ProblemCard
               number="06"
               text="Нужно открыть точку — а вывеска еще даже не в работе"
-              className="w-full"
+              className="w-full max-w-full"
             />
           </div>
         </div>
