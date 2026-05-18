@@ -1,37 +1,37 @@
 import type { NextPage } from "next";
 import Image from "next/image";
-import FrameComponent1 from "../components/frame-component1";
-import FrameComponent3 from "../components/frame-component3";
-import FrameComponent5 from "../components/frame-component5";
+import Header from "../components/header";
+import Hero from "../components/hero";
+import ProblemsGrid from "../components/problems-grid";
 import HeaderLevel from "../components/header-level";
 import Agreement from "../components/agreement";
 import Introduction from "../components/introduction";
-import GroupComponent1 from "../components/group-component1";
+import AdvantagesAccordion from "../components/advantages-accordion";
 import Businesses from "../components/businesses";
 import ServicesLocation from "../components/services-location";
-import FrameComponent6 from "../components/frame-component6";
-import FrameComponent2 from "../components/frame-component2";
-import FrameComponent4 from "../components/frame-component4";
-import FrameComponent7 from "../components/frame-component7";
-import FrameComponent8 from "../components/frame-component8";
-import FrameComponent9 from "../components/frame-component9";
+import Statistics from "../components/statistics";
+import ProcessStepsHeader from "../components/process-steps-header";
+import ProcessStepsFooter from "../components/process-steps-footer";
+import FAQGallery from "../components/faq-gallery";
+import CTAForm from "../components/cta-form";
+import Footer from "../components/footer";
 
 const Component1: NextPage = () => {
   return (
     <div
       className="
-      w-full relative bg-whitesmoke-100 overflow-hidden
+      w-[1520px] mx-auto relative overflow-hidden
       flex flex-col items-start
-      pt-[10px] px-0 pb-0
+      pt-[10px] px-[10px] pb-0
       box-border isolate gap-10
       max-[480px]:gap-5
       leading-[normal] tracking-[normal]
     "
     >
       {/* Footer background — absolute */}
-      <section className="w-full absolute top-[7672px] left-0 flex items-start isolate max-w-full">
+      <section className="w-full absolute top-[7602px] flex items-start isolate max-w-full">
         <Image
-          className="h-[1738px] max-[1600px]:h-[2138px] max-[1400px]:h-[2368px] max-[1200px]:h-[6068px] max-[1000px]:hidden w-full flex-1 relative max-w-full overflow-hidden object-cover m-auto"
+          className="h-[1738px] max-[1590px]:h-[2138px] max-[1400px]:h-[2368px] max-[1200px]:h-[6068px] max-[1000px]:hidden w-full flex-1 relative max-w-full overflow-hidden object-cover m-auto"
           width={1600}
           height={100}
           sizes="100vw"
@@ -62,12 +62,12 @@ const Component1: NextPage = () => {
       "
       >
         <div className="flex-1 min-w-0 flex flex-col items-start gap-[9px] max-w-full">
-          <FrameComponent1 />
-          <FrameComponent3 />
+          <Header />
+          <Hero />
         </div>
       </section>
 
-      <FrameComponent5 />
+      <ProblemsGrid />
 
       {/* Main white block */}
       <main
@@ -106,17 +106,17 @@ const Component1: NextPage = () => {
         </div>
 
         <Introduction />
-        <GroupComponent1 />
+        <AdvantagesAccordion />
       </main>
 
       <Businesses />
       <ServicesLocation />
-      <FrameComponent6 />
+      <Statistics />
 
       {/* Steps section: FrameComponent2 + dots + FrameComponent4 */}
-     {/* Steps section: FrameComponent2 + dots + FrameComponent4 */}
-<section
-  className="
+      {/* Steps section: FrameComponent2 + dots + FrameComponent4 */}
+      <section
+        className="
   self-stretch flex items-start
   pt-0
   px-[90px] pb-[147px]
@@ -127,10 +127,10 @@ const Component1: NextPage = () => {
   box-border max-w-full
   relative
 "
->
-  {/* Background image — only below 1200px */}
-  <Image
-    className="
+      >
+        {/* Background image — only below 1200px */}
+        <Image
+          className="
       hidden
       max-[1200px]:block
       absolute inset-0 w-full h-full
@@ -138,19 +138,19 @@ const Component1: NextPage = () => {
       z-0
       pointer-events-none
     "
-    width={1600}
-    height={100}
-    sizes="100vw"
-    alt=""
-    src="/Footer@2x.png"
-  />
+          width={1600}
+          height={100}
+          sizes="100vw"
+          alt=""
+          src="/Footer@2x.png"
+        />
 
-  <div className="flex-1 min-w-0 flex flex-col items-start gap-6 max-w-full relative z-[1]">
-    <FrameComponent2 />
+        <div className="flex-1 min-w-0 flex flex-col items-start gap-6 max-w-full relative z-[1]">
+          <ProcessStepsHeader />
 
-    {/* Connector dots row */}
-    <div
-      className="
+          {/* Connector dots row */}
+          <div
+            className="
       self-stretch flex items-start
       px-[103px]
       max-[1225px]:px-[51px]
@@ -159,19 +159,19 @@ const Component1: NextPage = () => {
       max-[360px]:px-3
       box-border max-w-full
     "
-    >
-      <div
-        className="
+          >
+            <div
+              className="
         flex-1 min-w-0
         flex items-start justify-between
         gap-5
         max-[480px]:flex-wrap max-[480px]:gap-3
       "
-      >
-        {[7, 7, 2, 6, 3, 4, 5].map((z, i) => (
-          <div
-            key={i}
-            className="
+            >
+              {[7, 7, 2, 6, 3, 4, 5].map((z, i) => (
+                <div
+                  key={i}
+                  className="
               w-6 h-6
               [backdrop-filter:blur(20px)]
               rounded-[12px]
@@ -180,21 +180,21 @@ const Component1: NextPage = () => {
               py-[7px] px-[9px]
               shrink-0
             "
-            style={{ zIndex: z }}
-          >
-            <div className="h-1.5 flex-1 relative rounded-full bg-pink-brand" />
+                  style={{ zIndex: z }}
+                >
+                  <div className="h-1.5 flex-1 relative rounded-full bg-pink-brand" />
+                </div>
+              ))}
+            </div>
           </div>
-        ))}
-      </div>
-    </div>
 
-    <FrameComponent4 />
-  </div>
-</section>
+          <ProcessStepsFooter />
+        </div>
+      </section>
 
-      <FrameComponent7 />
-      <FrameComponent8 />
-      <FrameComponent9 />
+      <FAQGallery />
+      <CTAForm />
+      <Footer />
     </div>
   );
 };

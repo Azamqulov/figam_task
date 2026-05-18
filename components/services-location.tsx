@@ -2,11 +2,11 @@ import type { NextPage } from "next";
 import Image from "next/image";
 import ReviewShowcase from "./review-showcase";
 
-export type ServicesLocationType = {
+export type ServicesLocationProps = {
   className?: string;
 };
 
-const ServicesLocation: NextPage<ServicesLocationType> = ({
+const ServicesLocation: NextPage<ServicesLocationProps> = ({
   className = "",
 }) => {
   return (
@@ -170,7 +170,7 @@ const ServicesLocation: NextPage<ServicesLocationType> = ({
                       p-[15px] gap-[5px]
                     "
                     >
-                      <div className="flex items-center gap-2">
+                      <div className="flex items-center  gap-2">
                         <Image
                           className="h-4 w-4 rounded-full shrink-0"
                           width={16}
@@ -275,7 +275,7 @@ const ServicesLocation: NextPage<ServicesLocationType> = ({
                   flex-1 min-w-0
                   max-[1225px]:w-full max-[1225px]:min-w-full
                   rounded-[20px] max-[480px]:rounded-[12px]
-                  flex items-start justify-between flex-wrap
+                  flex items-center justify-between
                   pt-[204px] px-[31px] pb-[204.9px]
                   max-[480px]:pt-[100px] max-[480px]:pb-[100px] max-[480px]:px-4
                   max-[360px]:pt-[70px] max-[360px]:pb-[70px] max-[360px]:px-3
@@ -285,7 +285,7 @@ const ServicesLocation: NextPage<ServicesLocationType> = ({
                   z-[4]
                 "
                 >
-                  <div className="flex flex-col items-start shrink-0">
+                  <div className="flex flex-col items-center justify-between shrink-0">
                     <Image
                       className="w-10 h-10 relative object-contain z-[5]"
                       loading="lazy"

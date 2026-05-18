@@ -114,7 +114,7 @@ const cardsData: CardData[] = [
 
 const BusinessCard = ({ title, imgSrc, imgWidth, imgHeight, actionText, count, location }: CardData) => {
   return (
-    <section className="w-num-365 rounded-num-20 bg-white flex flex-col items-center justify-between m-auto py-num-40 px-num-23 box-border gap-5 max-w-full text-center text-num-16 text-gray-2400 font-libre-franklin min-h-[407px] mq450:pt-num-26 mq450:pb-num-26 mq450:box-border">
+    <section className="w-[330px] rounded-num-20 bg-white flex flex-col items-center justify-between m-auto py-num-40 px-num-23 box-border gap-5 max-w-full text-center text-num-16 text-gray-2400 font-libre-franklin min-h-[407px] mq450:pt-num-26 mq450:pb-num-26 mq450:box-border">
       {/* Title */}
       <div className="w-full flex-none relative tracking-num--0_01 leading-[142%] uppercase font-semibold z-[1]">
         {title}
@@ -200,7 +200,7 @@ const Businesses: NextPage<BusinessesType> = ({ className = "" }) => {
             </div>
           </div>
         </section>
-        <div className="self-stretch flex items-start flex-wrap content-start gap-x-[18.7px] gap-y-5 max-w-full">
+        <div className="self-stretch flex flex-wrap content-start gap-x-5  gap-y-5 max-w-full">
           {cardsData.map((card) => (
             <BusinessCard key={card.id} {...card} />
           ))}

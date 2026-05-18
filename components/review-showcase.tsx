@@ -3,7 +3,7 @@ import type { NextPage } from "next";
 import { useMemo, type CSSProperties } from "react";
 import Image from "next/image";
 
-export type ReviewShowcaseType = {
+export type ReviewShowcaseProps = {
   className?: string;
   prop?: string;
   velvetSeason?: string;
@@ -29,7 +29,7 @@ export type ReviewShowcaseType = {
   gatheringTeamPadding?: CSSProperties["padding"];
 };
 
-const ReviewShowcase: NextPage<ReviewShowcaseType> = ({
+const ReviewShowcase: NextPage<ReviewShowcaseProps> = ({
   className = "",
   rectangleDivHeight,
   evaluationSummaryGap,
@@ -352,10 +352,9 @@ const ReviewShowcase: NextPage<ReviewShowcaseType> = ({
       <section
         className="
          flex-1 min-w-0
-         p-x-10
                   max-[1225px]:w-full max-[1225px]:min-w-full
                   rounded-[20px] max-[480px]:rounded-[12px]
-                  flex items-start justify-between flex-wrap
+                  flex items-center justify-between
                   pt-[204px] px-[31px] pb-[204.9px]
                   max-[480px]:pt-[100px] max-[480px]:pb-[100px] max-[480px]:px-4
                   max-[360px]:pt-[70px] max-[360px]:pb-[70px] max-[360px]:px-3
@@ -375,7 +374,7 @@ const ReviewShowcase: NextPage<ReviewShowcaseType> = ({
           style={imageIconStyle}
         />
         <div
-          className="flex flex-col items-start shrink-0"
+          className="flex flex-col items-center justify-center shrink-0"
           style={gatheringTeamStyle}
         >
           <Image

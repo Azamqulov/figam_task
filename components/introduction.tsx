@@ -152,11 +152,12 @@ const Introduction: NextPage<IntroductionType> = ({ className = "" }) => {
       `}
     >
       <div className="
+        bg-gainsboro-400
+
         flex-1 min-w-0 overflow-hidden
         rounded-[40px]
         max-[480px]:rounded-[24px]
         max-[360px]:rounded-[16px]
-        bg-gainsboro-400
         flex flex-col items-start
         pt-[254px] pb-[246px]
         max-[1225px]:pt-[194px] max-[1225px]:pb-[160px]

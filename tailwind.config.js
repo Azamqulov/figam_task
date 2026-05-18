@@ -122,9 +122,11 @@ module.exports = {
         "num-12": "1px solid #c3c3c3",
       },
       fontFamily: {
-        "libre-franklin": "Libre Franklin",
-        inherit: "inherit",
-      },
+  inter: ['"Inter"', "sans-serif"],
+  "libre-franklin": ['"Libre Franklin"', "sans-serif"],
+  sans: ['"Libre Franklin"', "sans-serif"],
+  inherit: "inherit",
+},
       borderRadius: {
         "num-20": "20px",
         "num-6": "6px",
